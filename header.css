@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Nova Square', sans-serif;
+}
+:root{
+    --myWhite:#E7E5E7;
+    --myGrey:#A6A4A7;
+    --myBlack:#0F0C0F;
+    --myDarkBrown:#594A45;
+    --myCoffeBrown:#B78F78;
+    --myGreen:#97C680;
+    --myOrange:#B85A3C;
+}
+/*Header that contains the navigation links and login buttons*/
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+}
+
+/*Navigation links style*/
+header a.myLink{
+    color: var(--myBlack);
+    margin: 30px;
+    font-weight:100;
+    transition: all .2s;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+
+}
+/*The small border that comes up ftom the top of the link whenever we hover on it*/
+header a.myLink::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    background-color: var(--myGreen);
+    bottom: 0;
+    transition: all .2s;
+}
+header a.myLink:hover::before {height: 50%; width: 100%;z-index: -1;}
+
+
+header .login button{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--myBlack);
+    border-radius: 15px;
+    background-color: var(--myBlack);
+    padding: 10px 40px;
+    color: var(--myWhite);
+    font-size: 15px;
+    transition: all .2s;
+    z-index: 1;
+    cursor: pointer;
+
+}
+header .login button::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    background-color: var(--myGreen);
+    border: 1px solid var(--myGreen);
+    transition: all .2s;
+
+}
+header .login button:hover::before{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+header .login button:hover{border: 1px solid var(--myGreen); color: var(--myWhite);}
